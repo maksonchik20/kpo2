@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hse-pos"
+version = "1.0.0"
+description = "Преподавательская оценка студентов"
+requires-python = ">=3.9"
+dependencies = ["dependency-injector==4.48.2"]
+
+[tool.setuptools.packages.find]
+include = ["pos*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=pos --cov-branch --cov-report=term-missing --cov-fail-under=80"
+
+[tool.coverage.run]
+relative_files = true
+
+[tool.coverage.report]
+precision = 2
